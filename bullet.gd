@@ -22,4 +22,3 @@ func _on_body_entered(body: Node2D) -> void:
 func set_speed(speed):
 	SPEED=speed
 	RANGE = 2000
-	print("speed is now" + str(SPEED)) 
