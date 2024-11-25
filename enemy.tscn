@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtu65dethxba2"]
+
+[ext_resource type="Texture2D" uid="uid://cgfk3oaopxp27" path="res://characters/bug/bug.png" id="1_rjcnm"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_wprij"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3t8e1"]
+radius = 29.0
+height = 62.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_wprij")
+
+[node name="Bug" type="Sprite2D" parent="."]
+position = Vector2(0, -39)
+scale = Vector2(2.5625, 2.34375)
+texture = ExtResource("1_rjcnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -41)
+shape = SubResource("CapsuleShape2D_3t8e1")

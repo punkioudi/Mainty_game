@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv5ml1alwou45"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_ny2fr"]
+[ext_resource type="Script" path="res://player.gd" id="1_pj0xn"]
+[ext_resource type="PackedScene" uid="uid://dl8lvkc2enbxu" path="res://gun.tscn" id="3_5tmul"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxosd"]
+radius = 27.0
+height = 106.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20x31"]
+radius = 52.0
+height = 160.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7bno"]
+bg_color = Color(0.226707, 0.226708, 0.226707, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whlk5"]
+bg_color = Color(0.356916, 0.744647, 0.328314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 46)
+script = ExtResource("1_pj0xn")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_ny2fr")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -54)
+shape = SubResource("CapsuleShape2D_uxosd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_5tmul")]
+position = Vector2(-3, -47)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, -54)
+shape = SubResource("CapsuleShape2D_20x31")
+debug_color = Color(0.823375, 0.172656, 0.418123, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -102.0
+offset_top = -132.0
+offset_right = 101.0
+offset_bottom = -113.0
+theme_override_styles/background = SubResource("StyleBoxFlat_j7bno")
+theme_override_styles/fill = SubResource("StyleBoxFlat_whlk5")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true

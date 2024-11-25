@@ -1,0 +1,847 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1nuob8x8thqt"]
+
+[ext_resource type="PackedScene" uid="uid://cv5ml1alwou45" path="res://player.tscn" id="1_oytt2"]
+[ext_resource type="Script" path="res://survivors_game.gd" id="1_ws7m4"]
+[ext_resource type="PackedScene" uid="uid://b5r2i43vmgdxw" path="res://computer.tscn" id="2_yy42r"]
+
+[sub_resource type="Curve2D" id="Curve2D_wkrtw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -338, -231, 0, 0, 0, 0, 2241, -237, 0, 0, 0, 0, 2233, 1288, 0, 0, 0, 0, -333, 1293, 0, 0, 0, 0, -327, -175)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ws7m4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1915.0
+offset_bottom = 1077.0
+
+[node name="Player" parent="." instance=ExtResource("1_oytt2")]
+position = Vector2(909, 563)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-909, -563)
+curve = SubResource("Curve2D_wkrtw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-338, -231)
+rotation = -0.00232648
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.509804)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="RegressionTimer" type="Timer" parent="."]
+
+[node name="Computers" type="Node" parent="."]
+
+[node name="Computer10" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(245, 1647)
+
+[node name="Computer11" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-762, 3316)
+
+[node name="Computer12" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-666, 3316)
+
+[node name="Computer13" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-572, 3315)
+
+[node name="Computer14" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-477, 3315)
+
+[node name="Computer15" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 3314)
+
+[node name="Computer16" parent="Computers" instance=ExtResource("2_yy42r")]
+
+[node name="Computer17" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-378, 3316)
+
+[node name="Computer18" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-278, 3316)
+
+[node name="Computer19" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-182, 3316)
+
+[node name="Computer20" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1442, 3316)
+
+[node name="Computer21" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1346, 3316)
+
+[node name="Computer22" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1252, 3315)
+
+[node name="Computer23" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1157, 3315)
+
+[node name="Computer24" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1058, 3316)
+
+[node name="Computer25" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-958, 3316)
+
+[node name="Computer26" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-862, 3316)
+
+[node name="Computer27" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(581, 3316)
+
+[node name="Computer28" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(677, 3316)
+
+[node name="Computer29" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(771, 3315)
+
+[node name="Computer30" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(866, 3315)
+
+[node name="Computer31" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(965, 3316)
+
+[node name="Computer32" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1065, 3316)
+
+[node name="Computer33" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1161, 3316)
+
+[node name="Computer34" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-99, 3316)
+
+[node name="Computer35" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-3, 3316)
+
+[node name="Computer36" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(91, 3315)
+
+[node name="Computer37" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(186, 3315)
+
+[node name="Computer38" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(285, 3316)
+
+[node name="Computer39" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(385, 3316)
+
+[node name="Computer40" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(481, 3316)
+
+[node name="Computer41" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1940, 3316)
+
+[node name="Computer42" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2036, 3316)
+
+[node name="Computer43" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2130, 3315)
+
+[node name="Computer44" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2225, 3315)
+
+[node name="Computer45" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2324, 3316)
+
+[node name="Computer46" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2424, 3316)
+
+[node name="Computer47" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2520, 3316)
+
+[node name="Computer48" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1260, 3316)
+
+[node name="Computer49" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1356, 3316)
+
+[node name="Computer50" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1450, 3315)
+
+[node name="Computer51" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1545, 3315)
+
+[node name="Computer52" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1644, 3316)
+
+[node name="Computer53" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1744, 3316)
+
+[node name="Computer54" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1840, 3316)
+
+[node name="Computer55" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3283, 3316)
+
+[node name="Computer56" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3379, 3316)
+
+[node name="Computer57" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3473, 3315)
+
+[node name="Computer58" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3568, 3315)
+
+[node name="Computer59" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3667, 3316)
+
+[node name="Computer60" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3767, 3316)
+
+[node name="Computer61" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3863, 3316)
+
+[node name="Computer62" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2603, 3316)
+
+[node name="Computer63" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2699, 3316)
+
+[node name="Computer64" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2793, 3315)
+
+[node name="Computer65" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2888, 3315)
+
+[node name="Computer66" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2987, 3316)
+
+[node name="Computer67" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3087, 3316)
+
+[node name="Computer68" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3183, 3316)
+
+[node name="Computer69" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-677, -2024)
+
+[node name="Computer70" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-581, -2024)
+
+[node name="Computer71" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-487, -2025)
+
+[node name="Computer72" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-392, -2025)
+
+[node name="Computer73" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-293, -2024)
+
+[node name="Computer74" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-193, -2024)
+
+[node name="Computer75" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-97, -2024)
+
+[node name="Computer76" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1357, -2024)
+
+[node name="Computer77" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1261, -2024)
+
+[node name="Computer78" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1167, -2025)
+
+[node name="Computer79" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1072, -2025)
+
+[node name="Computer80" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-973, -2024)
+
+[node name="Computer81" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-873, -2024)
+
+[node name="Computer82" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-777, -2024)
+
+[node name="Computer83" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(666, -2024)
+
+[node name="Computer84" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(762, -2024)
+
+[node name="Computer85" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(856, -2025)
+
+[node name="Computer86" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(951, -2025)
+
+[node name="Computer87" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1050, -2024)
+
+[node name="Computer88" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1150, -2024)
+
+[node name="Computer89" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1246, -2024)
+
+[node name="Computer90" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-14, -2024)
+
+[node name="Computer91" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(82, -2024)
+
+[node name="Computer92" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(176, -2025)
+
+[node name="Computer93" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(271, -2025)
+
+[node name="Computer94" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(370, -2024)
+
+[node name="Computer95" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(470, -2024)
+
+[node name="Computer96" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(566, -2024)
+
+[node name="Computer97" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2025, -2024)
+
+[node name="Computer98" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2121, -2024)
+
+[node name="Computer99" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2215, -2025)
+
+[node name="Computer100" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2310, -2025)
+
+[node name="Computer101" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2409, -2024)
+
+[node name="Computer102" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2509, -2024)
+
+[node name="Computer103" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2605, -2024)
+
+[node name="Computer104" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1345, -2024)
+
+[node name="Computer105" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1441, -2024)
+
+[node name="Computer106" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1535, -2025)
+
+[node name="Computer107" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1630, -2025)
+
+[node name="Computer108" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1729, -2024)
+
+[node name="Computer109" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1829, -2024)
+
+[node name="Computer110" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1925, -2024)
+
+[node name="Computer111" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3368, -2024)
+
+[node name="Computer112" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3464, -2024)
+
+[node name="Computer113" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3558, -2025)
+
+[node name="Computer114" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3653, -2025)
+
+[node name="Computer115" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3752, -2024)
+
+[node name="Computer116" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3852, -2024)
+
+[node name="Computer117" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3948, -2024)
+
+[node name="Computer118" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2688, -2024)
+
+[node name="Computer119" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2784, -2024)
+
+[node name="Computer120" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2878, -2025)
+
+[node name="Computer121" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2973, -2025)
+
+[node name="Computer122" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3072, -2024)
+
+[node name="Computer123" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3172, -2024)
+
+[node name="Computer124" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3268, -2024)
+
+[node name="Computer125" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 3208)
+
+[node name="Computer126" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 3106)
+
+[node name="Computer127" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 3000)
+
+[node name="Computer128" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 2901)
+
+[node name="Computer129" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 2799)
+
+[node name="Computer130" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 2693)
+
+[node name="Computer131" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 2593)
+
+[node name="Computer132" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 2487)
+
+[node name="Computer133" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 2385)
+
+[node name="Computer134" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 2279)
+
+[node name="Computer135" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 2180)
+
+[node name="Computer136" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 2078)
+
+[node name="Computer137" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 1972)
+
+[node name="Computer138" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1857)
+
+[node name="Computer139" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1751)
+
+[node name="Computer140" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1649)
+
+[node name="Computer141" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1543)
+
+[node name="Computer142" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1444)
+
+[node name="Computer143" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1342)
+
+[node name="Computer144" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 1236)
+
+[node name="Computer145" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 1136)
+
+[node name="Computer146" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 1030)
+
+[node name="Computer147" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 928)
+
+[node name="Computer148" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 822)
+
+[node name="Computer149" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 723)
+
+[node name="Computer150" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 621)
+
+[node name="Computer151" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, 515)
+
+[node name="Computer152" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 415)
+
+[node name="Computer153" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 309)
+
+[node name="Computer154" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 207)
+
+[node name="Computer155" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 101)
+
+[node name="Computer156" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, 2)
+
+[node name="Computer157" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -100)
+
+[node name="Computer158" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -206)
+
+[node name="Computer159" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -306)
+
+[node name="Computer160" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -412)
+
+[node name="Computer161" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -514)
+
+[node name="Computer162" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -620)
+
+[node name="Computer163" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -719)
+
+[node name="Computer164" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -821)
+
+[node name="Computer165" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -927)
+
+[node name="Computer166" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1042)
+
+[node name="Computer167" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1148)
+
+[node name="Computer168" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1250)
+
+[node name="Computer169" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1356)
+
+[node name="Computer170" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1455)
+
+[node name="Computer171" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1557)
+
+[node name="Computer172" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1539, -1663)
+
+[node name="Computer173" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -1763)
+
+[node name="Computer174" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -1869)
+
+[node name="Computer175" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -1971)
+
+[node name="Computer176" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -2077)
+
+[node name="Computer177" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -2176)
+
+[node name="Computer178" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1542, -2278)
+
+[node name="Computer179" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-1447, -2027)
+
+[node name="Computer180" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 3304)
+
+[node name="Computer181" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(4076, 3306)
+
+[node name="Computer182" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(4172, 3306)
+
+[node name="Computer183" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(4161, -2034)
+
+[node name="Computer184" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 3198)
+
+[node name="Computer185" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 3096)
+
+[node name="Computer186" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 2990)
+
+[node name="Computer187" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 2891)
+
+[node name="Computer188" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 2789)
+
+[node name="Computer189" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 2683)
+
+[node name="Computer190" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 2583)
+
+[node name="Computer191" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 2477)
+
+[node name="Computer192" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 2375)
+
+[node name="Computer193" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 2269)
+
+[node name="Computer194" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 2170)
+
+[node name="Computer195" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 2068)
+
+[node name="Computer196" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 1962)
+
+[node name="Computer197" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1847)
+
+[node name="Computer198" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1741)
+
+[node name="Computer199" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1639)
+
+[node name="Computer200" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1533)
+
+[node name="Computer201" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1434)
+
+[node name="Computer202" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1332)
+
+[node name="Computer203" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 1226)
+
+[node name="Computer204" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 1126)
+
+[node name="Computer205" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 1020)
+
+[node name="Computer206" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 918)
+
+[node name="Computer207" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 812)
+
+[node name="Computer208" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 713)
+
+[node name="Computer209" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 611)
+
+[node name="Computer210" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, 505)
+
+[node name="Computer211" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 405)
+
+[node name="Computer212" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 299)
+
+[node name="Computer213" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 197)
+
+[node name="Computer214" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, 91)
+
+[node name="Computer215" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -8)
+
+[node name="Computer216" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -110)
+
+[node name="Computer217" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -216)
+
+[node name="Computer218" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -316)
+
+[node name="Computer219" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -422)
+
+[node name="Computer220" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -524)
+
+[node name="Computer221" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -630)
+
+[node name="Computer222" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -729)
+
+[node name="Computer223" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -831)
+
+[node name="Computer224" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -937)
+
+[node name="Computer225" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1052)
+
+[node name="Computer226" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1158)
+
+[node name="Computer227" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1260)
+
+[node name="Computer228" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1366)
+
+[node name="Computer229" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1465)
+
+[node name="Computer230" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1567)
+
+[node name="Computer231" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3979, -1673)
+
+[node name="Computer232" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -1773)
+
+[node name="Computer233" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -1879)
+
+[node name="Computer234" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -1981)
+
+[node name="Computer235" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -2087)
+
+[node name="Computer236" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3976, -2186)
+
+[node name="Computer237" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(4071, -2037)
+
+[node name="Computer238" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1407, 1213)
+
+[node name="Computer239" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1508, 1206)
+
+[node name="Computer240" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(209, 1018)
+
+[node name="Computer241" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(304, 1018)
+
+[node name="Computer242" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1669, 2121)
+
+[node name="Computer243" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2671, 1025)
+
+[node name="Computer244" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-740, 77)
+
+[node name="Computer245" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3202, -633)
+
+[node name="Computer246" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3004, 2376)
+
+[node name="Computer247" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-363, 2340)
+
+[node name="Computer248" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(-498, -947)
+
+[node name="Computer249" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1478, -884)
+
+[node name="Computer250" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3309, -534)
+
+[node name="Computer251" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3110, -533)
+
+[node name="Computer252" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(3431, 665)
+
+[node name="Computer253" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(896, -1641)
+
+[node name="Computer254" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(2904, -1401)
+
+[node name="Computer255" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(992, -1569)
+
+[node name="Computer256" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(128, 1743)
+
+[node name="Computer8" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(654, 210)
+
+[node name="Computer7" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1236, 972)
+
+[node name="Computer" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(362, 320)
+
+[node name="Computer2" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1294, 318)
+
+[node name="Computer3" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1388, 364)
+
+[node name="Computer9" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1388, 364)
+
+[node name="Computer4" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1486, 318)
+
+[node name="Computer5" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(1754, 768)
+
+[node name="Computer6" parent="Computers" instance=ExtResource("2_yy42r")]
+position = Vector2(500, 732)
+
+[connection signal="level_up" from="." to="Player" method="_on_game_level_up"]
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="RegressionTimer" to="." method="_on_regression_timer_timeout"]

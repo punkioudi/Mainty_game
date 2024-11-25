@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://biyml5dvmwno3"]
+
+[ext_resource type="Texture2D" uid="uid://b1gvb4a6o6rc" path="res://characters/Regression/regression.png" id="1_4qxsa"]
+[ext_resource type="Script" path="res://regression.gd" id="1_yryf5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2lq6h"]
+radius = 38.8362
+height = 193.185
+
+[node name="Regression" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_yryf5")
+
+[node name="Regression" type="Sprite2D" parent="."]
+position = Vector2(38, -89)
+scale = Vector2(8, 8)
+texture = ExtResource("1_4qxsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, -92)
+rotation = 0.486999
+shape = SubResource("CapsuleShape2D_2lq6h")
